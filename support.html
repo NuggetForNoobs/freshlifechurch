@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Fresh Life Church</title>
+  
+  <!-- Favicon link -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg" />
+  
+  <link rel="stylesheet" href="css/support.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+</head>
+
+<body>
+  <!-- Hero Section with Slideshow -->
+<div data-scroll-container>
+<header>
+  <div class="navbar">
+    <img src="images/logo.svg" alt="Logo" class="logo-img" style="transform: translate(50px, -2px);">
+    <div class="logo">Fresh Life</div>
+    <div class="mondo">CHURCH</div>
+
+    <!-- Search Bar (inside navbar for proper alignment) -->
+    <div class="search-bar">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" id="liveSearchInput" />
+      </div>
+      <ul class="suggestion-list" id="suggestionList"></ul>
+    </div>
+  
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ABOUT INTRO -->
+<div class="divider"></div>
+<section class="hero" style="margin-left: -20px !important;">
+  <div class="hero-content">
+    <h2>Giving</h2>
+    <p>Through you, they can receive joy from your blessings</p>
+  </div>
+</section>
+
+<!-- About Section Box -->
+<section class="give-intro">
+  <div class="gi-wrap">
+    <h1 class="gi-title">
+      See what God can do through<br class="gi-br">
+      your Generosity
+    </h1>
+<br>
+    <p class="gi-sub">
+      Since 2000, we’ve already developed a place to be the center of growing in the faith of Jesus,
+      being a fresh person in God. What began as a small gathering has grown into a living, breathing
+      movement—anchored in truth, driven by purpose, and filled with people who believe that life in
+      Christ is anything but an ordinary movement of God.
+    </p>
+  </div>
+</section>
+
+
+<!-- PRAYER REQUEST -->
+<section class="give-section" id="give">
+  <div class="give-wrap">
+    <div class="give-ui">
+
+      <h3 class="give-h">Choose a giving option</h3>
+      <span class="gap"></span>
+
+      <!-- 2-option pill group -->
+      <div class="pill-group two">
+        <input class="pill-input" type="radio" name="give_type" id="opt-need" value="need">
+        <label class="pill" for="opt-need">For Persons in Need</label>
+
+        <input class="pill-input" type="radio" name="give_type" id="opt-shelter" value="shelter">
+        <label class="pill" for="opt-shelter">For Shelters &amp; Public Place</label>
+      </div>
+
+      <p class="give-sub">Trust God with your finances by giving your first 10% back to Him.</p>
+      <span class="gap"></span>
+      <!-- campus select -->
+      <div class="select-field">
+        <select id="campus" aria-label="Choose your campus community">
+          <option value="">Choose your campus community</option>
+          <option>Central</option>
+          <option>North</option>
+          <option>South</option>
+          <option>Online</option>
+        </select>
+      </div>
+      <span class="gap2"></span>
+      <h3 class="give-h2" style="margin-top:28px">Choose how you want to give</h3>
+
+      <!-- 3-option pill group -->
+      <div class="pill-group three">
+        <input class="pill-input" type="radio" name="pay_method" id="m-card" value="card">
+        <label class="pill" for="m-card">Card</label>
+
+        <input class="pill-input" type="radio" name="pay_method" id="m-stripe" value="stripe">
+        <label class="pill" for="m-stripe">Stripe</label>
+
+        <input class="pill-input" type="radio" name="pay_method" id="m-paypal" value="paypal">
+        <label class="pill" for="m-paypal">Paypal</label>
+      </div>
+      <span class="gap3"></span>
+      <p class="give-note">
+        Give using your checking account, debit, or credit
+        card. For giving outside the US, please click
+        <a href="https://www.gofundme.com" target="blank" class="link">here</a>.
+      </p>
+      <span class="gap"></span>
+      <span class="gap"></span>
+      <span class="gap2"></span>
+      <!-- CTA (disabled until all 3 choices made) -->
+      <button class="cta3" id="give-cta" disabled>
+        <span>Give Now</span>
+      </button>
+      <span class="gap"></span>
+
+      <div class="give-links">
+        <a href="#" class="link">
+          Finds out our distributors here
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3Zm5 18H5a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h6v2H5v14h14v-6h2v6a2 2 0 0 1-2 2Z"/>
+          </svg>
+        </a>
+      <span class="gap4"></span>
+        <a href="#" class="link">
+          View the FAQs
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="currentColor" d="M12 16 6 10h12l-6 6Z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--new oneee-->
+
+<section class="give-extra">
+  <div class="give-extra-wrap">
+    <h2 class="give-extra-title">Additional giving options</h2>
+      <span class="gap5"></span>
+    <div class="extra-grid">
+      <!-- Card 1 -->
+      <article class="extra-card" tabindex="0">
+        <div class="extra-icon" aria-hidden="true">
+          <!-- gift -->
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              d="M12 7v14M3 11h18M4 7h16v4H4V7Zm8 0H9.5a2 2 0 1 1 0-4C10.9 3 12 4.3 12 7Zm0 0h2.5a2 2 0 1 0 0-4C13.1 3 12 4.3 12 7Z"/>
+          </svg>
+        </div>
+        <h3 class="extra-h">Give in person</h3>
+        <p class="extra-text">
+          You can give in person at any of our
+          <a href="#">locations</a> during the weekend worship experience.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="extra-card" tabindex="0">
+        <div class="extra-icon" aria-hidden="true">
+          <!-- box -->
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              d="M3 7.5 12 3l9 4.5M3 7.5V16.5L12 21l9-4.5V7.5M12 12V21M3 7.5 12 12l9-4.5"/>
+          </svg>
+        </div>
+        <h3 class="extra-h">Mail your gift</h3>
+        <p class="extra-text">
+          You can always send your gift in their
+          <a href="#">mailboxes</a> or their postal mail at their places.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="extra-card" tabindex="0">
+        <div class="extra-icon" aria-hidden="true">
+          <!-- delivery / mail -->
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              d="M2 8h11v8H2zM13 11h4l5 3v2h-9V11Zm-7 7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM2 8l5.5 3L13 8"/>
+          </svg>
+        </div>
+        <h3 class="extra-h">We deliver your gift</h3>
+        <p class="extra-text">
+          If you aren’t able to reach the person or place you want to gift, we always help!
+          Reach us at <a href="mailto:freshlife@mail.com">freshlife@mail.com</a>.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs Section -->
+
+<section class="faq2">
+  <div class="faq2-wrap">
+    <h2 class="faq2-title">FAQs</h2>
+
+    <!-- FAQ Item -->
+    <div class="faq2-item open">
+      <button class="faq2-q" type="button" aria-expanded="true">
+        How do I give for my first time?
+      </button>
+      <div class="faq2-panel">
+        <div>
+          <div class="faq2-a">
+            By using our Giving feature, you can give online or in person. Your gift
+            is forwarded to people and communities that need your help.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" type="button" aria-expanded="false">
+        Where does my giving affect the public?
+      </button>
+      <div class="faq2-panel">
+        <div>
+          <div class="faq2-a">
+            It supports local outreach, community care, relief efforts, and
+            discipleship programs in our city and beyond.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" type="button" aria-expanded="false">
+        What giving option should I choose?
+      </button>
+      <div class="faq2-panel">
+        <div>
+          <div class="faq2-a">
+            Pick the option that fits you—card/Stripe/Paypal or mail. Each method
+            funds the same mission and is equally secure.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" type="button" aria-expanded="false">
+        How do I track my giving statement?
+      </button>
+      <div class="faq2-panel">
+        <div>
+          <div class="faq2-a">
+            Create/sign in to your account to view, download, and print your giving
+            history anytime.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" type="button" aria-expanded="false">
+        Will I receive a giving statement?
+      </button>
+      <div class="faq2-panel">
+        <div>
+          <div class="faq2-a">
+            Yes. We email annual statements and also store them in your account for
+            easy access.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" type="button" aria-expanded="false">
+        What is the deadline for annual contributions?
+      </button>
+      <div class="faq2-panel">
+        <div>
+          <div class="faq2-a">
+            Contributions must be received or postmarked by December 31 to count for
+            the current tax year.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" type="button" aria-expanded="false">
+        How can I give assets to the church?
+      </button>
+      <div class="faq2-panel">
+        <div>
+          <div class="faq2-a">
+            We accept gifts of stock, crypto, and property. Contact our finance team
+            for transfer instructions.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div style="height: 120px;"></div>
+<!-- Outro -->
+
+<!--OHHHH HELL NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
+
+<script src="contact.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll('.faq2-item');
+
+  items.forEach(item => {
+    const btn = item.querySelector('.faq2-q');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        item.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".right-nav a");
+
+  // Highlight on scroll
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Smooth scroll on click
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 50,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Create cursor element
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    let mouseX = 0, mouseY = 0; // Current mouse position
+    let targetX = 0, targetY = 0; // Target position for cursor movement
+    const easing = 0.3;  // Increase easing to make the cursor heavier (less glidy)
+
+    // Track the mouse position
+    function updateCursorPosition(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }
+
+    // Function to move the cursor
+    function moveCursor() {
+      targetX += (mouseX - targetX) * easing;  // Easing for X-axis
+      targetY += (mouseY - targetY) * easing;  // Easing for Y-axis
+
+      cursor.style.transform = `translate(${targetX}px, ${targetY}px)`; // Apply the movement to the cursor
+      requestAnimationFrame(moveCursor); // Continue to call this function for smooth animation
+    }
+
+    // Add mousemove listener to update mouse position
+    document.addEventListener('mousemove', updateCursorPosition);
+
+    // Start moving the cursor
+    moveCursor();
+  });
+</script>
+
+<script>
+  // Remove the default cursor on links and buttons
+  const linksAndButtons = document.querySelectorAll('a, button');
+  linksAndButtons.forEach((el) => {
+    el.style.cursor = 'none';
+  });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script>
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+  });
+</script>
+
+</body>
+</html>
