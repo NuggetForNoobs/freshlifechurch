@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Fresh Life Church</title>
+  
+  <!-- Favicon link -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg" />
+  
+  <link rel="stylesheet" href="css/blog.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Special+Gothic+Expanded+One:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+</head>
+
+<body>
+  <!-- Hero Section with Slideshow -->
+<div data-scroll-container>
+<header class="site-header">
+  <div class="navbar">
+    <!-- Brand (logo + text) -->
+    <a href="index.html" class="brand" aria-label="Fresh Life Church home">
+      <img src="images/logo.svg" alt="" class="brand__img">
+      <span class="brand__stack">
+        <span class="brand__name">Fresh Life</span>
+        <span class="brand__tag">CHURCH</span>
+      </span>
+    </a>
+
+    <!-- Search -->
+    <div class="search">
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Search" id="liveSearchInput" />
+      <ul class="suggestion-list" id="suggestionList"></ul>
+    </div>
+
+    <!-- Nav -->
+    <nav class="primary-nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Sermon</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ABOUT INTRO -->
+<section id="sermonHero" class="sermon-hero" aria-label="Sermon overview">
+  <div class="sermon-hero__slides">
+    <div class="sermon-hero__slide is-active" style="background-image:url('images/Image-04.png');"></div>
+    <div class="sermon-hero__slide" style="background-image:url('images/image-02.png');"></div>
+    <div class="sermon-hero__slide" style="background-image:url('images/image-03.png');"></div>
+  </div>
+
+  <div class="sermon-hero__overlay" aria-hidden="true"></div>
+
+  <div class="sermon-hero__content">
+<h1 class="sermon-title">
+  <span>5</span>
+  <span>TITIK</span>
+  <span>API</span>
+  <span>DALAM</span>
+  <span>RUMAH</span>
+  <span>TUHAN</span>
+</h1>
+
+<span class="chelbreaker"></span>
+    <p class="sermon-meta">Pastor Franky Rewah</p>
+    <p class="sermon-sub">Our latest sermon brought by Ps. Franky Rewah</p>
+
+    <div class="sermon-ctas">
+      <a class="btn-read-sermon" href="blog-post.html">Read Sermon</a>
+      <a class="link-full-service" href="https://www.youtube.com/@GPdIFreshLifeOhio" target="_blank" rel="noopener">
+        From the full service <span aria-hidden="true">›</span>
+      </a>
+    </div>
+  </div>
+</section>
+<br> <br> <br> <br> 
+<!-- SERMON OVERVIEW / HERO -->
+
+
+
+
+<!-- PRAYER REQUEST -->
+<section id="sermons-section">
+  <div class="sr-wrap">
+
+    <!-- Title + Subtitle -->
+    <h2 class="sr-title">Sermons</h2>
+    <p class="sr-subtitle">
+      Looking for hope or direction? Search to discover the perfect sermon for your current season.
+    </p>
+
+    <!-- Controls -->
+    <div class="sr-controls">
+      <div class="sr-search">
+        <svg class="sr-ico" viewBox="0 0 24 24"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+        <input id="sermons-search" type="text" placeholder="Search">
+      </div>
+      <button id="sr-filter-btn" class="sr-filter-btn" aria-expanded="false">
+        <svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 6H3V4h18v2ZM14 13H3v-2h11v2ZM10 20H3v-2h7v2Z"/>
+        </svg>
+        <span>Filters</span>
+      </button>
+    </div>
+
+    <!-- Topic pills (hidden by default) -->
+    <div id="sr-tags" class="sr-tags">
+      <span class="sr-tag">The Love of God</span>
+      <span class="sr-tag">Bible Depth</span>
+      <span class="sr-tag">How to begin new Life?</span>
+      <span class="sr-tag">Daily Sermons</span>
+      <span class="sr-tag">Prophecy</span>
+      <span class="sr-tag">Be Faithful</span>
+      <span class="sr-tag">Relationship in Christ</span>
+      <span class="sr-tag">Advices for the Youths</span>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!--new oneee-->
+<section id="sermons-list">
+  <div class="sl-wrap">
+<a href="blog-post.html" class="sermon-card-link">
+  <div class="sermon-card">
+    <img src="images/image-02.png" alt="Sermon 1">
+    <span class="chelbreaker2"></span>
+    <h3>5 Titik Api dalam Rumah Tuhan</h3>
+    <p>Pastor Franky Rewah</p>
+  </div>
+</a>
+
+<a href="blog-post.html" class="sermon-card-link">
+  <div class="sermon-card">
+    <img src="images/image-04.png" alt="Sermon 2">
+    <span class="chelbreaker2"></span>
+    <h3>Life Mission as a Christian</h3>
+    <p>Pastor Andy Thomson</p>
+  </div>
+</a>
+
+<a href="blog-post.html" class="sermon-card-link">
+  <div class="sermon-card">
+    <img src="images/image-02.png" alt="Sermon 3">
+    <span class="chelbreaker2"></span>
+    <h3>5 Titik Api dalam Rumah Tuhan</h3>
+    <p>Pastor Franky Rewah</p>
+  </div>
+</a>
+
+<a href="blog-post.html" class="sermon-card-link">
+  <div class="sermon-card">
+    <img src="images/image-04.png" alt="Sermon 4">
+    <span class="chelbreaker2"></span>
+    <h3>Life Mission as a Christian</h3>
+    <p>Pastor Andy Thomson</p>
+  </div>
+</a>
+
+<a href="blog-post.html" class="sermon-card-link">
+  <div class="sermon-card">
+    <img src="images/image-02.png" alt="Sermon 5">
+    <span class="chelbreaker2"></span>
+    <h3>5 Titik Api dalam Rumah Tuhan</h3>
+    <p>Pastor Franky Rewah</p>
+  </div>
+</a>
+
+<a href="blog-post.html" class="sermon-card-link">
+  <div class="sermon-card">
+    <img src="images/image-04.png" alt="Sermon 6">
+    <span class="chelbreaker2"></span>
+    <h3>Life Mission as a Christian</h3>
+    <p>Pastor Andy Thomson</p>
+  </div>
+</a>
+
+</section>
+
+
+
+
+<div style="height: 120px;"></div>
+<!-- Outro -->
+
+<!--OHHHH HELL NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
+
+<script src="contact.js"></script>
+
+<script>
+  // Get spans immediately
+  const spans = document.querySelectorAll(".sermon-title span");
+
+  // Force a tiny delay so CSS is applied, then start animation
+  setTimeout(() => {
+    spans.forEach((span, i) => {
+      setTimeout(() => {
+        span.classList.add("show");
+      }, i * 80); // 0.08s stagger per word
+    });
+  }, 0);
+</script>
+
+<script>
+const btn = document.getElementById('sr-filter-btn');
+const tags = document.getElementById('sr-tags');
+
+const CLOSE_TAG_DURATION = 350;        
+const CONTAINER_COLLAPSE_DURATION = 450;
+
+btn.addEventListener('click', () => {
+  if (tags.classList.contains('open')) {
+    if (tags.classList.contains('closing')) return;
+
+    tags.classList.add('closing');
+    tags.classList.remove('ready'); // disable hover during close
+    tags.style.maxHeight = tags.scrollHeight + 'px';
+
+    setTimeout(() => {
+      void tags.offsetHeight;
+      tags.style.maxHeight = '0px';
+      tags.classList.remove('open');
+
+      const onCollapse = (e) => {
+        if (e.propertyName !== 'max-height') return;
+        tags.removeEventListener('transitionend', onCollapse);
+        tags.classList.remove('closing');
+        tags.style.maxHeight = '';
+      };
+      tags.addEventListener('transitionend', onCollapse);
+    }, CLOSE_TAG_DURATION);
+
+  } else {
+    tags.classList.remove('closing');
+    tags.classList.remove('ready'); // ensure hover disabled initially
+    tags.style.maxHeight = '0px';
+    void tags.offsetHeight;
+    tags.style.maxHeight = tags.scrollHeight + 'px';
+    tags.classList.add('open');
+
+    const onExpand = (e) => {
+      if (e.propertyName !== 'max-height') return;
+      tags.removeEventListener('transitionend', onExpand);
+      tags.style.maxHeight = '';
+
+      // enable hover after last tag finishes opening animation
+      const lastTag = tags.querySelector('.sr-tag:last-child');
+      if (lastTag) {
+        lastTag.addEventListener('animationend', () => {
+          tags.classList.add('ready');
+        }, { once: true });
+      }
+    };
+    tags.addEventListener('transitionend', onExpand);
+  }
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".sermon-hero__slide");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    // auto switch every 5s
+    setInterval(nextSlide, 5000);
+
+    // show first slide
+    showSlide(currentIndex);
+  });
+</script>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll('.faq2-item');
+
+  items.forEach(item => {
+    const btn = item.querySelector('.faq2-q');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        item.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".right-nav a");
+
+  // Highlight on scroll
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Smooth scroll on click
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 50,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Create cursor element
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    let mouseX = 0, mouseY = 0; // Current mouse position
+    let targetX = 0, targetY = 0; // Target position for cursor movement
+    const easing = 0.3;  // Increase easing to make the cursor heavier (less glidy)
+
+    // Track the mouse position
+    function updateCursorPosition(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }
+
+    // Function to move the cursor
+    function moveCursor() {
+      targetX += (mouseX - targetX) * easing;  // Easing for X-axis
+      targetY += (mouseY - targetY) * easing;  // Easing for Y-axis
+
+      cursor.style.transform = `translate(${targetX}px, ${targetY}px)`; // Apply the movement to the cursor
+      requestAnimationFrame(moveCursor); // Continue to call this function for smooth animation
+    }
+
+    // Add mousemove listener to update mouse position
+    document.addEventListener('mousemove', updateCursorPosition);
+
+    // Start moving the cursor
+    moveCursor();
+  });
+</script>
+
+<script>
+  // Remove the default cursor on links and buttons
+  const linksAndButtons = document.querySelectorAll('a, button');
+  linksAndButtons.forEach((el) => {
+    el.style.cursor = 'none';
+  });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script>
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+  });
+</script>
+
+</body>
+</html>

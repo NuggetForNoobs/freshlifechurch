@@ -17,27 +17,34 @@
 <body>
   <!-- Hero Section with Slideshow -->
 <div data-scroll-container>
-<header>
+<header class="site-header">
   <div class="navbar">
-    <img src="images/logo.svg" alt="Logo" class="logo-img" style="transform: translate(50px, -2px);">
-    <div class="logo">Fresh Life</div>
-    <div class="mondo">CHURCH</div>
+    <!-- Brand (logo + text) -->
+    <a href="index.html" class="brand" aria-label="Fresh Life Church home">
+      <img src="images/logo.svg" alt="" class="brand__img">
+      <span class="brand__stack">
+        <span class="brand__name">Fresh Life</span>
+        <span class="brand__tag">CHURCH</span>
+      </span>
+    </a>
 
-    <!-- Search Bar (inside navbar for proper alignment) -->
-    <div class="search-bar">
-      <div class="search-input-wrapper">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search" id="liveSearchInput" />
-      </div>
+    <!-- Search -->
+    <div class="search">
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Search" id="liveSearchInput" />
       <ul class="suggestion-list" id="suggestionList"></ul>
     </div>
-  
-    <ul class="nav-links">
-      <li><a href="index.html" >Home</a></li>
-      <li><a href="about.html" >About</a></li>
-      <li><a href="support.html" >Support</a></li>
-      <li><a href="contact.html" >Contact</a></li>
-    </ul>
+
+    <!-- Nav -->
+    <nav class="primary-nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Sermon</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -341,7 +348,7 @@
 </section>
 </section>
 
-
+<div style="height: 200px;"></div>
 <!--OHHHH HELL NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
 
 <script>

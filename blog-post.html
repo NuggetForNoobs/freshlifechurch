@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Fresh Life Church</title>
+  
+  <!-- Favicon link -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg" />
+  
+  <link rel="stylesheet" href="css/blog-post.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+</head>
+
+<body>
+  <!-- Hero Section with Slideshow -->
+<div data-scroll-container>
+<header class="site-header">
+  <div class="navbar">
+    <!-- Brand (logo + text) -->
+    <a href="index.html" class="brand" aria-label="Fresh Life Church home">
+      <img src="images/logo.svg" alt="" class="brand__img">
+      <span class="brand__stack">
+        <span class="brand__name">Fresh Life</span>
+        <span class="brand__tag">CHURCH</span>
+      </span>
+    </a>
+
+    <!-- Search -->
+    <div class="search">
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Search" id="liveSearchInput" />
+      <ul class="suggestion-list" id="suggestionList"></ul>
+    </div>
+
+    <!-- Nav -->
+    <nav class="primary-nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Sermon</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ABOUT INTRO -->
+<section id="sermon-post" class="sermon-post" data-url="https://example.com/sermon/life-missions">
+  <!-- 1) Video with "Watch on YouTube" badge -->
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/7Wm-RdYS55w?si=TNGCv5Bmo-QD82HN"
+      title="Life Missions - Fresh Life Church"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- 2) Title + byline -->
+<div class="sermon-header">
+  <div class="sermon-header-left">
+    <h1 class="sermon-title">Life Missions</h1>
+    <div class="sermon-meta">Sunday Service from July 13, 2025</div>
+  </div>
+  <div class="sermon-by">
+    <div class="by-label">Pastor</div>
+    <div class="by-name">Franky Rewah</div>
+  </div>
+</div>
+
+  <!-- 4) actions: Share (dropdown) & Copy -->
+  <div class="sermon-actions">
+    <button class="pill pill-share" id="share-btn" aria-haspopup="true" aria-expanded="false">Share ▾</button>
+    <div id="share-dropdown" class="share-dropdown" role="menu" aria-hidden="true">
+      <button class="dropdown-item" data-action="copy-link">Copy link</button>
+      <button class="dropdown-item" data-action="twitter">Share to Twitter</button>
+      <button class="dropdown-item" data-action="facebook">Share to Facebook</button>
+      <button class="dropdown-item" data-action="whatsapp">Share to WhatsApp</button>
+      <button class="dropdown-item" data-action="instagram">Instagram (copy link)</button>
+    </div>
+
+    <button class="pill pill-copy" id="copy-btn">Copy to Clipboard</button>
+
+    <div id="copy-feedback" class="copy-feedback" aria-hidden="true">Copied ✔</div>
+  </div>
+
+  <br><br><span class="chelbreaker"></span>
+
+
+<!-- 5) sermon body (only textual content will be copied) -->
+<!-- 5) sermon body -->
+<article id="sermon-body" class="sermon-body">
+  <p>Life often feels like a storm we can’t escape, yet the message of the Gospel is that God meets us right in the middle of the chaos. Jesus reminds us that even when the waves rise high, He is the anchor that keeps us from drifting away. In every trial we face, His presence brings comfort and guidance, reminding us that we are never truly alone.</p>
+
+  <!-- Image slider -->
+<div class="sermon-image-wrapper">
+  <button class="nav-btn left-btn" onclick="changeSlide(-1)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+      <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="sermon-slider">
+    <img src="images/image-03.png" alt="Sermon Illustration 1" class="sermon-image active">
+    <img src="images/image-04.png" alt="Sermon Illustration 2" class="sermon-image">
+    <img src="images/image-05.png" alt="Sermon Illustration 3" class="sermon-image">
+  </div>
+
+  <button class="nav-btn right-btn" onclick="changeSlide(1)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+      <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
+
+  <span class="chelbreaker2"></span>
+  <p>Our strength is not in what we can control, but in the One who has already overcome the world. Hope in Christ is not a fragile wish but a firm foundation, a promise that no matter how dark the night becomes, we are held. It is in surrendering our fears and trusting Him fully that we find peace that surpasses understanding, and courage to face the challenges ahead.</p>
+
+  <p>Let us commit to living out our calling—serving the church, loving the lost, and proclaiming the good news with boldness and humility. Every act of kindness, every word of encouragement, and every step of faith is a testimony to His love working through us. Even in moments of doubt or weakness, God’s grace empowers us to persevere and shine His light to those around us.</p>
+
+  <p>Remember that our journey is not measured by the absence of struggle but by the presence of faith. Each challenge can teach us patience, resilience, and compassion. By leaning into God’s guidance and listening for His voice, we discover clarity and purpose amidst the noise of life. Our mission is to embody His love, extend mercy, and offer hope to a world desperately in need of both.</p>
+
+  <p>May we hold fast to the truths we have received, nurturing our spirit through prayer, Scripture, and fellowship. Let our lives reflect the Gospel in action—through forgiveness, humility, and unwavering trust. As we walk this path, may our hearts remain steadfast, our minds focused, and our souls anchored in the eternal promises of Christ, who strengthens us for every season.</p>
+</article>
+<br>
+
+<section class="comments-wrap">
+  <h2 class="comments-title">Comments</h2>
+  <span class="chelbreaker3"></span>
+  <div class="reply-box">
+    <h3 class="reply-title">Leave a Reply</h3>
+    <p class="reply-note">
+      Your email address will not be published. Required fields are marked <span aria-hidden="true">*</span>
+    </p>
+<br>
+    <form class="comment-form" action="#" method="post" novalidate>
+      <!-- Comment -->
+      <div class="form-row">
+        <label for="comment">Comment<span class="req">*</span></label>
+        <textarea id="comment" name="comment" rows="7" required></textarea>
+      </div>
+
+      <!-- Name -->
+      <div class="form-row">
+        <label for="author">Name<span class="req">*</span></label>
+        <input id="author" name="author" type="text" required />
+      </div>
+
+      <!-- Email -->
+      <div class="form-row">
+        <label for="email">Email<span class="req">*</span></label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <!-- Cell Group -->
+      <div class="form-row">
+        <label for="cellgroup">Cell Group <span class="label-hint">(if you have one)</span></label>
+        <input id="cellgroup" name="cellgroup" type="text" />
+      </div>
+
+      <!-- Remember me -->
+      <div class="form-row remember">
+        <label class="checkbox">
+          <input type="checkbox" name="saveinfo">
+          <span>Save my name, email, and website in this browser for the next time I comment.</span>
+        </label>
+      </div>
+
+      <button class="btn-submit" type="submit">Post Comment</button>
+    </form>
+  </div>
+</section>
+<br>
+
+
+<section class="more-sermons" aria-label="More sermons">
+  <div class="ms-header">
+    <h3 class="ms-title">More sermons</h3>
+    <a class="ms-see-all" href="blog.html">See all</a>
+  </div>
+
+<div class="ms-carousel">
+  <div class="ms-track" id="msTrack">
+    <!-- 1 -->
+    <a class="ms-card" href="blog.html">
+      <div class="ms-thumb"><img src="images/image-01.png" alt=""></div>
+      <div class="ms-meta">
+        <span class="chelbreaker"></span>
+        <div class="ms-card-title">5 Titik Api dalam Rumah Tuhan</div>
+        <div class="ms-card-author">Pastor Franky Rewah</div>
+      </div>
+    </a>
+    <!-- 2 -->
+    <a class="ms-card" href="blog.html">
+      <div class="ms-thumb"><img src="images/image-02.png" alt=""></div>
+      <div class="ms-meta">
+        <span class="chelbreaker"></span>
+        <div class="ms-card-title">Life Mission as a Christian</div>
+        <div class="ms-card-author">Pastor Andy Thomson</div>
+      </div>
+    </a>
+    <!-- 3 -->
+    <a class="ms-card" href="blog.html">
+      <div class="ms-thumb"><img src="images/image-03.png" alt=""></div>
+      <div class="ms-meta">
+        <span class="chelbreaker"></span>
+        <div class="ms-card-title">5 Titik Api dalam Rumah Tuhan</div>
+        <div class="ms-card-author">Pastor Franky Rewah</div>
+      </div>
+    </a>
+    <!-- 4 -->
+    <a class="ms-card" href="blog.html">
+      <div class="ms-thumb"><img src="images/image-04.png" alt=""></div>
+      <div class="ms-meta">
+        <span class="chelbreaker"></span>
+        <div class="ms-card-title">Life Mission as a Christian</div>
+        <div class="ms-card-author">Pastor Andy Thomson</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+    <!-- right button only -->
+    <button class="ms-next" id="msNext" aria-label="Next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+        <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<div style="height: 120px;"></div>
+<!-- Outro -->
+
+<!--OHHHH HELL NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
+
+<script src="contact.js"></script>
+
+
+<script>
+(() => {
+  const track = document.getElementById('msTrack');
+  const next  = document.getElementById('msNext');
+  let animating = false;
+
+  // read the current step (card width + gap) on demand
+  const getStep = () => {
+    const gap = parseFloat(getComputedStyle(track).getPropertyValue('--ms-gap')) || 16;
+    const card = track.querySelector('.ms-card');
+    if (!card) return 0;
+    const w = card.getBoundingClientRect().width;
+    return w + gap;
+  };
+
+  const slideNext = () => {
+    if (animating) return;
+    animating = true;
+
+    const step = getStep();
+    track.style.transition = 'transform 420ms ease';
+    track.style.transform  = `translateX(-${step}px)`;
+
+    const onEnd = () => {
+      // move first card to the end, reset transform, keep loop infinite
+      track.style.transition = 'none';
+      track.appendChild(track.firstElementChild);
+      track.style.transform = 'translateX(0)';
+      // force reflow so the next click animates again
+      void track.offsetHeight;
+      animating = false;
+    };
+
+    track.addEventListener('transitionend', onEnd, { once: true });
+  };
+
+  next.addEventListener('click', slideNext);
+})();
+</script>
+
+
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".sermon-image");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) slide.classList.add("active");
+    });
+  }
+
+  function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // initialize
+  showSlide(currentSlide);
+</script>
+
+
+<script>
+/* ---------- helpers ---------- */
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+/* Elements */
+const post = document.getElementById('sermon-post');
+const shareBtn = document.getElementById('share-btn');
+const shareDropdown = document.getElementById('share-dropdown');
+const copyBtn = document.getElementById('copy-btn');
+const copyFeedback = document.getElementById('copy-feedback');
+const bodyEl = document.getElementById('sermon-body');
+
+/* Toggle dropdown */
+shareBtn.addEventListener('click', (e) => {
+  const open = shareDropdown.classList.toggle('show');
+  shareBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  shareDropdown.setAttribute('aria-hidden', open ? 'false' : 'true');
+});
+
+/* close dropdown on outside click */
+document.addEventListener('click', (e) => {
+  if (!post.contains(e.target)) {
+    shareDropdown.classList.remove('show');
+    shareBtn.setAttribute('aria-expanded', 'false');
+    shareDropdown.setAttribute('aria-hidden', 'true');
+  }
+});
+
+/* share dropdown actions */
+shareDropdown.addEventListener('click', (e) => {
+  const item = e.target.closest('[data-action]');
+  if (!item) return;
+  const action = item.dataset.action;
+  const pageUrl = post.dataset.url || location.href;
+  const title = (post.querySelector('.sermon-title') || {}).innerText || '';
+
+  if (action === 'copy-link') {
+    copyPlainTextToClipboard(pageUrl);
+    // small visual feedback
+    showTempText(item, 'Link copied');
+  } else if (action === 'twitter') {
+    const t = encodeURIComponent(title + ' ' + pageUrl);
+    window.open(`https://twitter.com/intent/tweet?text=${t}`, '_blank', 'noopener');
+  } else if (action === 'facebook') {
+    const u = encodeURIComponent(pageUrl);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${u}`, '_blank', 'noopener');
+  } else if (action === 'whatsapp') {
+    const t = encodeURIComponent(title + ' ' + pageUrl);
+    window.open(`https://api.whatsapp.com/send?text=${t}`, '_blank', 'noopener');
+  } else if (action === 'instagram') {
+    // Instagram web doesn't support prefilled share — copy link and open instagram
+    copyPlainTextToClipboard(pageUrl);
+    window.open('https://www.instagram.com/', '_blank', 'noopener');
+    showTempText(item, 'Link copied');
+  }
+
+  // close dropdown after action
+  shareDropdown.classList.remove('show');
+  shareBtn.setAttribute('aria-expanded', 'false');
+  shareDropdown.setAttribute('aria-hidden', 'true');
+});
+
+/* Copy sermon text (only textual content) */
+copyBtn.addEventListener('click', async () => {
+  const title = (post.querySelector('.sermon-title') || {}).innerText || '';
+  const meta = (post.querySelector('.sermon-meta') || {}).innerText || '';
+  const url = post.dataset.url || location.href;
+
+  // collect textual blocks from body (only p and li)
+  const paragraphs = $$('#sermon-body p, #sermon-body li').map(el => el.innerText.trim()).filter(Boolean);
+  const bodyText = paragraphs.join('\n\n');
+
+  const attribution = 'Copied from Fresh Life Church Website - CC Copyright all right reserved for FLC';
+  const finalText = attribution + '\n\n' + title + '\n' + meta + '\n\n' + bodyText + '\n\n' + url;
+
+  try {
+    await navigator.clipboard.writeText(finalText);
+    showCopyFeedback();
+  } catch (err) {
+    // fallback
+    copyViaTextarea(finalText);
+    showCopyFeedback();
+  }
+});
+
+/* tiny helper copy-only-text function used by share->copy-link */
+function copyPlainTextToClipboard(text) {
+  if (!text) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).catch(() => copyViaTextarea(text));
+  } else {
+    copyViaTextarea(text);
+  }
+}
+
+function copyViaTextarea(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.position = 'absolute';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+/* small UI helpers */
+function showCopyFeedback() {
+  copyFeedback.classList.add('show');
+  copyFeedback.setAttribute('aria-hidden', 'false');
+  setTimeout(() => {
+    copyFeedback.classList.remove('show');
+    copyFeedback.setAttribute('aria-hidden', 'true');
+  }, 2200);
+}
+
+function showTempText(el, text) {
+  const original = el.innerText;
+  el.innerText = text;
+  setTimeout(()=> el.innerText = original, 1400);
+}
+
+/* keyboard: close dropdown with Escape */
+document.addEventListener('keydown', (ev) => {
+  if (ev.key === 'Escape') {
+    shareDropdown.classList.remove('show');
+    shareBtn.setAttribute('aria-expanded', 'false');
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".right-nav a");
+
+  // Highlight on scroll
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Smooth scroll on click
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 50,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Create cursor element
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    let mouseX = 0, mouseY = 0; // Current mouse position
+    let targetX = 0, targetY = 0; // Target position for cursor movement
+    const easing = 0.3;  // Increase easing to make the cursor heavier (less glidy)
+
+    // Track the mouse position
+    function updateCursorPosition(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }
+
+    // Function to move the cursor
+    function moveCursor() {
+      targetX += (mouseX - targetX) * easing;  // Easing for X-axis
+      targetY += (mouseY - targetY) * easing;  // Easing for Y-axis
+
+      cursor.style.transform = `translate(${targetX}px, ${targetY}px)`; // Apply the movement to the cursor
+      requestAnimationFrame(moveCursor); // Continue to call this function for smooth animation
+    }
+
+    // Add mousemove listener to update mouse position
+    document.addEventListener('mousemove', updateCursorPosition);
+
+    // Start moving the cursor
+    moveCursor();
+  });
+</script>
+
+<script>
+  // Remove the default cursor on links and buttons
+  const linksAndButtons = document.querySelectorAll('a, button');
+  linksAndButtons.forEach((el) => {
+    el.style.cursor = 'none';
+  });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script>
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+  });
+</script>
+
+</body>
+</html>

@@ -226,462 +226,563 @@ body {
   .search      { width: clamp(220px, 34vw, 420px); }
 }
 
-
-/* Shared Arrow Styles */
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(40, 40, 40, 0.6);
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;  
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  backdrop-filter: blur(4px);
+.chelbreaker {
+  display: block;   /* forces a line break */
 }
 
-.prev {
-  left: 20px;
-}
-
-.next {
-  right: 20px;
-}
-
-.arrow-icon {
-  width: 24px;
-  height: 24px;
-  stroke: rgb(191, 191, 191);
-  stroke-width: 2.2;
-}
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-50%) scale(1.05);
+.chelbreaker2 {
+  display: block;
+  height: 10px;
+  content: "";
 }
 
 
-/* Position Left and Right */
-.prev {
-  left: 20px;
-}
 
-.next {
-  right: 20px;
-}
 
-/* Search Bar Styling */
-.search-bar {
-  position: relative; /* important! */
-  width: 500px;
-}
 
-.search-input-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 10px 16px;
-  background-color: #1a1a1a;
-  border-radius: 9999px;
-  border: 1px solid #444;
-  width: 100%;
-}
-
-/* Smooth transition for the search wrapper */
-.search-input-wrapper {
-  transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add transition for box-shadow and border */
-}
-
-/* Focus effect on the search wrapper */
-.search-input-wrapper:focus-within {
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.4); /* Light gray box-shadow on focus */
-  border-color: rgba(255, 255, 255, 0.4); /* Light gray border (optional) */
-}
-
-/* Styling for the icon inside the search input */
-.search-input-wrapper i {
-  color: #888; /* Default color */
-  margin-right: 10px;
-  font-size: 16px;
-  transition: color 0.3s ease-in-out; /* Smooth transition for the icon color */
-}
-
-/* ===== FAMILY INTRO ===== */
-.family-intro{
-  padding-block: clamp(28px, 4vw, 44px) clamp(36px, 5vw, 56px);
-}
-
-.family-wrap{
-  width: min(100%, 1120px);         /* same content width rhythm */
-  margin: 0 auto;
-  padding-inline: clamp(16px, 3vw, 24px);
-}
-
-.family-title{
-  margin: 0 0 8px 0;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: clamp(2.25rem, 4vw, 3.5rem);  /* ~56px at large */
-  line-height: 1.12;
-  letter-spacing: .1px;
-  color: #f2f2f2;
-}
-
-.family-sub{
-  margin: 0 0 20px 0;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-weight: 600;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);  /* ~20px at large */
-  color: #d9d9d9;
-}
-
-.family-body{
-  margin: 0 0 26px 0;
-  max-width: 900px;                 /* keeps text line-length like your figma */
-  font-family: 'DM Sans', system-ui, sans-serif;
+/* Intro Supports */
+/* ===== Sermon Overview ===== */
+/* ===== Local font (you said fonts/SpecialGothicExpandedOne-Regular.ttf) ===== */
+@font-face {
+  font-family: "Special Gothic Expanded One";
+  src: url("/fonts/SpecialGothicExpandedOne-Regular.woff2") format("woff2"),
+       url("/fonts/SpecialGothicExpandedOne-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-size: clamp(.98rem, 1.2vw, 1.03rem);
-  line-height: 1.6;
-  color: #bfbfbf;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* image */
-.family-img {
-  display: block;
+/* Fallback for body text */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap');
+
+/* ===== Sermon Hero (1:1 Figma-style) ===== */
+:root{
+  --hero-min-height: 720px;       /* desktop baseline (adjust if you need pixel-perfect) */
+  --hero-padding-left: 92px;      /* distance from left edge to text (tweak +10/ -10) */
+  --hero-padding-top: 100px;      /* vertical offset from top */
+  --title-clamp-min: 36px;
+  --title-clamp-max: 120px;
+  --accent: #ff7a1a;
+}
+
+/* container */
+.sermon-hero{
+  position: relative;
   width: 100%;
-  max-height: 560px;   /* adjust to your liking */
-  object-fit: cover;   /* crop instead of stretch */
-  border-radius: 16px;
-  box-shadow: 0 22px 50px rgba(0,0,0,.45);
+  min-height: var(--hero-min-height);
   overflow: hidden;
+  background: #000;
+  color: #ffffff;
+  font-family: 'DM Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* Hero Section */
-.worship-section {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #f5f5f5;
+/* slides */
+.sermon-hero__slides { position: absolute; inset: 0; z-index: 0; }
+.sermon-hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 900ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity;
+}
+.sermon-hero__slide.is-active { opacity: 1; }
+
+/* bottom-to-top gradient overlay (sits above image but below text) */
+.sermon-hero__overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.78) 0%,
+      rgba(0,0,0,0.46) 28%,
+      rgba(0,0,0,0.18) 48%,
+      rgba(0,0,0,0) 72%
+    );
 }
 
-.worship-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.worship-header p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-/* About section */
-:root {
-  --content-max: 1150px;
-  --page-gutter: 24px;
-}
-
-.about-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 50px 20px;
-}
-
-.about-intro h1 {
-  font-size: 3rem; /* bigger heading per your request */
-  margin-bottom: 20px;
-}
-
-.about-intro p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.about-image {
-  text-align: center;
-  margin-top: 20px; /* adjusted to close the gap */
-}
-
-.about-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-.about-section {
-  background: #0b0b0b;
-  padding-block: clamp(44px, 5.4vw, 72px);
-}
-
-.about-card {
-  width: min(100%, var(--content-max));
-  margin-inline: auto;
-  padding: clamp(22px, 4.05vw, 50px);
-  background: #141414;
-  border-radius: 22px;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 16px 40px rgba(0, 0, 0, 0.55);
-  color: #eaeaea;
-  text-align: center;
-}
-
-.subtitle {
-  font-size: 1.3rem;
-  font-weight: 500;
-  opacity: 0.8;
-  margin-bottom: clamp(7px, 0.72vw, 11px);
-}
-
-.title {
-  font-size: clamp(25px, 3.24vw + 5px, 50px);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  font-weight: 700;
-  margin: 0 0 clamp(16px, 1.98vw, 25px);
-}
-
-.cross-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: clamp(6px, 1.2vw, 14px) 0 clamp(20px, 2vw, 30px);
-}
-
-
-.cross {
-  width: 50px;
-  height: auto; /* keeps original aspect ratio */
-  display: block;
-  filter: drop-shadow(0 2px 0 rgba(0,0,0,.25));
-}
-
-.about-boxes {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(14px, 1.98vw, 25px);
-  align-items: stretch;
-}
-
-.about-box {
-  background: #202020;
-  border-radius: 16px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-  padding: clamp(16px, 2.34vw, 28px);
+/* content block positioned to match Figma 1:1 feel */
+.sermon-hero__content{
+  position: absolute;
+  left: var(--hero-padding-left);
+  top: var(--hero-padding-top);
+  z-index: 2;
+  max-width: 760px;              /* keeps the title line breaks like Figma */
   display: flex;
   flex-direction: column;
-  text-align: center;
-  min-height: 198px;
+  gap: 12px;
 }
 
-.about-box h3 {
-  font-size: 2.3rem;
-  line-height: 1.25;
-  margin: 0 0 8px 0;
-  font-weight: 800;
+/* Title: exact local font, uppercase, tight leading like your Figma */
+.sermon-title {
+  margin: 0 0 6px 0;
+  margin-top: -25px;
+  font-family: "Special Gothic Expanded One", "DM Sans", sans-serif; /* keep your font */
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.86;
+  color: #ffffff;
+  font-size: clamp(var(--title-clamp-min), 5.4vw, var(--title-clamp-max));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  overflow: hidden; /* keep text contained */
 }
 
-.about-box p {
-  color: #cfcfcf;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  margin: 0 0 auto;
+.sermon-title span {
+  display: inline-block;
+  font-family: inherit; /* keep the font */
+  transform: translateY(-100%);
+  opacity: 0;
+  animation: dropText 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
-.learn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4em;
-  text-decoration: none;
-  color: #eaeaea;
-  font-weight: 600;
-  font-family: 'DM Sans', sans-serif;
-  text-align: center;
-  width: 100%;
-  transition: 
-    color 0.4s ease-in-out,
-    text-shadow 0.4s ease-in-out; /* smooth glow transition */
-}
+/* stagger each word slightly, fast but smooth */
+.sermon-title span:nth-child(1) { animation-delay: 0s; }
+.sermon-title span:nth-child(2) { animation-delay: 0.08s; }
+.sermon-title span:nth-child(3) { animation-delay: 0.16s; }
+.sermon-title span:nth-child(4) { animation-delay: 0.24s; }
+.sermon-title span:nth-child(5) { animation-delay: 0.32s; }
+.sermon-title span:nth-child(6) { animation-delay: 0.40s; }
 
-.learn .arrow {
-  transition: transform 0.3s ease-in-out;
-}
-
-.learn:hover {
-  color: #fff;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
-}
-
-.learn:hover .arrow {
-  transform: translateX(3px);
+@keyframes dropText {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 
-/* Experience section */
-:root { --exp-max: 1160px; } /* match the width of the section above */
-
-.exp-section{
-  padding-block: clamp(36px, 5vw, 64px);
-  color: inherit;
-  font-family: inherit;
+.chelbreaker {
+  display: block;
+  height: 13px; /* adjust gap */
 }
 
-.exp-cardwrap{
-  width:min(100%, var(--exp-max));
-  margin-inline:auto;
-}
-
-/* Header */
-.exp-header{
-  text-align:center;
-  margin-bottom: clamp(18px, 3.2vw, 28px);
-}
-.exp-pin{
-  width: 38px;   /* bigger width */
-  height: 38px;  /* bigger height */
-  color: #d8d8d8;
-  opacity:.9;
-  margin: 0 auto clamp(10px, 1vw, 14px);
-  display:block;
-}
-.exp-title {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 3.3rem;
-  line-height: 1.15;
-  margin: 0 0 clamp(6px, .8vw, 10px);
+/* Meta & subtitle */
+.sermon-meta{
+  transform: translateX(20px);  /* move right */
+  margin: 0;
   color: #f2f2f2;
+  font-weight: 600;
+  font-size: 16px;
 }
-.exp-sub{
-  max-width: 930px;
-  margin: 0 auto;
-  font-weight: 35s0;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color:#cfcfcf;
-}
-
-/* Grid of cards */
-.exp-grid{
-  display:grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 12px !important;                 /* <- the only gap you'll see */
-  justify-content: stretch !important;
-  align-content: start !important;
-  justify-items: stretch !important;
-  align-items: stretch !important;
+.sermon-sub{
+  transform: translateX(20px);  /* move right */
+  margin: 0;
+  margin-top: -5px;
+  color: #bfbfbf;
+  font-size: 14px;
 }
 
-.exp-grid > *{
-  margin: 0 !important;
-  padding: 0 !important;                /* in case wrappers add inner gutters */
-  width: 100% !important;
+/* CTAs */
+.sermon-ctas{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 12px;
 }
 
-/* Card shell */
-.exp-card {
-  background: #0f0f0f;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
-  display: grid;
-  grid-template-rows: auto auto;
-  width: 100%;
-  transition: 
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease,
-    filter 0.25s ease;
-}
-.exp-card:hover {
-  transform: translateY(-4px) scale(1.02); /* a little more lift + tiny scale */
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.12),
-    0 12px 28px rgba(0,0,0,.45),
-    0 0 20px rgba(255,255,255,0.08); /* faint glow around card */
-  filter: brightness(1.03); /* very subtle brightness bump */
-}
-
-@media (hover: hover) {
-  .exp-card {
-    transition: filter 0.5s ease-in-out, transform 0.3s ease;
-  }
-
-  /* Dim only non-hovered cards */
-  .exp-grid:hover .exp-card:not(:hover) {
-    filter: brightness(0.6);
-  }
-
-  /* Keep hovered card bright + optional slight lift */
-  .exp-grid:hover .exp-card:hover {
-    filter: brightness(1);
-    transform: translateY(-2px);
-  }
-}
-
-/* Card image */
-.exp-img{
-  width:100%;
-  height:auto;
-  display:block;
-  aspect-ratio: 7 / 4;             /* keeps consistent height */
-  object-fit: cover;
-}
-
-/* Card body */
-.exp-body{
-  padding: clamp(14px, 1.6vw, 20px);
-  display:flex;
-  flex-direction:column;
-  gap: 6px;
-}
-.exp-body h3{
-  font-weight:600;
-  font-size: 1.66rem;
-  margin:0 0 4px 0;
-  color:#f0f0f0;
-}
-.exp-body p{
-  margin:0 0 auto;
-  color:#d1d1d1;
-  line-height:1.55;
-  font-size: 1rem;
-}
-.exp-cta{
+/* Read Sermon button: pill, hover => orange, opens new tab (target=_blank already) */
+.btn-read-sermon{
+  transform: translateX(20px);  /* move right */
   display:inline-flex;
   align-items:center;
-  gap:.4em;
-  text-decoration:none;
-  color:#eaeaea;
-  font-weight:600;
+  justify-content:center;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #0a0a0a;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: all 0.4s ease; /* smooth like butter */
+}
+
+.btn-read-sermon:hover{
+  transform: translateX(20px) translateY(-1px);
+  background: var(--accent);
+  color: #0a0a0a;
+  box-shadow: 0 6px 20px rgba(255,122,26,0.28);
+}
+
+/* thin glowing hover for the secondary link */
+.link-full-service{
+  transform: translateX(24px);  /* move right */
+  color: #e6e6e6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-shadow .18s ease, opacity .18s ease, transform .12s ease;
+  opacity: .95;
+}
+.link-full-service:hover{
+  text-shadow: 0 0 10px rgba(255,255,255,0.18);
+  transform: translateX(24px);
+  opacity: 2;
+}
+
+/* make sure text is above overlay */
+.sermon-hero__content * { position: relative; z-index: 3; }
+
+/* fine tuning: nudges to match figma */
+.sermon-hero__content { transform: translateX(0); } /* tweak left/right via --hero-padding-left */
+.sermon-title { margin-bottom: 6px; }
+
+/* Mobile / responsive rules: preserve layout and readability */
+@media (max-width: 1100px){
+  :root { --hero-min-height: 640px; }
+  .sermon-hero__content { left: calc(var(--hero-padding-left) * 0.7); top: 72px; max-width: 60%; }
+  .sermon-title { font-size: clamp(34px, 9.2vw, 84px); }
+}
+@media (max-width: 800px){
+  :root { --hero-min-height: 520px; }
+  .sermon-hero__content { left: 28px; top: 48px; max-width: 86%; }
+  .sermon-title { font-size: clamp(28px, 10.8vw, 62px); line-height: 1.02; }
+  .sermon-meta { font-size: 14px; }
+  .sermon-sub  { font-size: 13px; }
+  .btn-read-sermon { padding: 10px 14px; }
+}
+/* small phones: stack CTA under title, slightly larger gradient for legibility */
+@media (max-width: 420px){
+  :root { --hero-min-height: 420px; }
+  .sermon-hero__content { left: 18px; top: 40px; max-width: 92%; }
+  .sermon-ctas { flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 18px; }
+  .sermon-hero__overlay {
+    background:
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0.88) 0%,
+        rgba(0,0,0,0.56) 28%,
+        rgba(0,0,0,0.18) 48%,
+        rgba(0,0,0,0) 72%
+      );
+  }
+}
+
+/* accessibility reduced motion respect */
+@media (prefers-reduced-motion: reduce){
+  .sermon-hero__slide { transition: none !important; }
+  .btn-read-sermon, .link-full-service { transition: none !important; }
+}
+
+/* Intro Supports */
+
+
+
+
+
+/* Intro block */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root{
+  --bg:#0b0b0b;
+  --panel:#121212;
+  --panel-2:#181818;
+  --stroke:#2b2b2b;
+  --text:#e7e7e7;
+  --muted:#b8b8b8;
+  --chip:#1b1b1b;
+  --shadow:0 12px 32px rgba(0,0,0,.35);
+  --radius:9999px;
+  --radius-lg:16px;
+}
+
+#sermons-section{
+  background:var(--bg);
+  font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  padding:24px 0 12px;
+}
+
+.sr-wrap{
+  max-width:1050px;
+  margin:0 auto;
+  padding:0 22px;
+}
+
+.sr-controls{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  position:relative;
+}
+
+/* Search pill */
+.sr-search{
+  flex:1;
+  height:46px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 16px 0 14px;
+  background:var(--panel);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  font-family:'DM Sans';
+}
+.sr-ico{
+  width:18px;height:18px;fill:#8b8b8b;flex:0 0 auto;
+}
+#sermons-search{
+  width:100%;
+  height:100%;
+  border:0; outline:0;
+  background:transparent;
+  color:var(--text);
+  font-size:15px;
+}
+#sermons-search::placeholder{color:#8e8e8e}
+
+/* Filter button */
+.sr-filter-btn{
+  height:46px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:0 18px;
+  background:var(--panel);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  color:#e1e1e1;
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease;
+}
+.sr-filter-btn:hover{background:var(--panel-2); box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.sr-filter-btn:active{transform:translateY(1px)}
+
+/* Dropdown (appears when button pressed) */
+.sr-filter-dropdown{
+  position:absolute;
+  top:56px; /* 46 + 10 gap */
+  right:0;
+  width:320px;
+  background:#151515;
+  border:1px solid var(--stroke);
+  border-radius:var(--radius-lg);
+  padding:10px;
+  box-shadow:var(--shadow);
+  display:none;
+}
+.sr-filter-dropdown {
+  display: none;
+}
+
+.sr-filter-dropdown.open {
+  display: block;
+}
+
+.sr-filter-item{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 10px;
+  border-radius:10px;
+  color:#ddd;
+  font-size:14px;
+  line-height:1;
+  user-select:none;
+}
+.sr-filter-item:hover{background:#1c1c1c}
+
+.sr-filter-item input{
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+  width:15px;height:15px;border:1px solid var(--stroke);border-radius:4px;background:#101010;display:inline-block;position:relative;
+}
+.sr-filter-item input:checked{background:#222}
+.sr-filter-item input:checked::after{
+  content:""; position:absolute; inset:2px; background:#ff7a1a;
+  border-radius:2px;
+}
+
+/* Topic pills below search */
+/* Hidden by default (collapsed, but not display:none) */
+/* container (collapsed by default but animatable) */
+#sr-tags{
+  margin-top:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  overflow:hidden;
+  max-height:0;                    /* collapsed */
+  opacity:0;
+  transform:translateY(-6px);
+  transition: max-height 450ms ease, opacity 350ms ease, transform 350ms ease;
+}
+
+/* visible container */
+#sr-tags.open{
+  max-height:1000px; /* large enough to fit all tags */
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* base tag (uses transition so closing is smooth) */
+.sr-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  background: var(--chip);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  color: #d0d0d0;
+  font-size: 14px;
+  white-space: nowrap;
+
+  /* animation / transition */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 350ms ease, transform 350ms ease, background 180ms ease, color 180ms ease;
+  pointer-events: none; /* <-- disable interaction while animating */
+  
+    /* initial hidden state for opening animation */
+  opacity:0;
+  transform:translateY(10px);
+
+  /* transition used for closing */
+  transition: opacity 350ms ease, transform 350ms ease;
+}
+
+/* When the container is fully ready, allow pointer events */
+#sr-tags.ready .sr-tag {
+  pointer-events: auto;
+  transition: 
+    opacity 350ms ease, 
+    transform 350ms ease, 
+    box-shadow 250ms ease, 
+    border-color 250ms ease; /* added border-color transition */
+  cursor: none; /* hides default cursor so only your custom one shows */
+}
+
+/* Hover style — only active when .ready is present */
+#sr-tags.ready .sr-tag:hover {
+  border-color: #bdbdbd;           /* glowing border color */
+  box-shadow: 0 0 8x 1.2px #cecece; /* subtle glow */
+  opacity: 0.9;
+  transform: translateY(-2px);     /* optional lift */
+  cursor: pointer;
+}
+
+/* opening cascade (animation, staggered) */
+@keyframes fadeSlideUp {
+  to { opacity:1; transform:translateY(0); }
+}
+#sr-tags.open .sr-tag { animation: fadeSlideUp 600ms ease forwards; }
+#sr-tags.open .sr-tag:nth-child(1){ animation-delay: 0.10s; }
+#sr-tags.open .sr-tag:nth-child(2){ animation-delay: 0.20s; }
+#sr-tags.open .sr-tag:nth-child(3){ animation-delay: 0.30s; }
+#sr-tags.open .sr-tag:nth-child(4){ animation-delay: 0.40s; }
+#sr-tags.open .sr-tag:nth-child(5){ animation-delay: 0.50s; }
+#sr-tags.open .sr-tag:nth-child(6){ animation-delay: 0.60s; }
+#sr-tags.open .sr-tag:nth-child(7){ animation-delay: 0.70s; }
+#sr-tags.open .sr-tag:nth-child(8){ animation-delay: 0.80s; }
+
+/* closing: disable opening animation and force all tags to move up together */
+#sr-tags.closing .sr-tag{
+  animation: none !important;
+  opacity:0;
+  transform:translateY(-8px);
+  /* transition already defined on .sr-tag controls timing */
+}
+
+
+
+
+/* Title + Subtitle */
+.sr-title {
+  font-size: 53px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+
+.sr-subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+
+
+
+
+
+
+
+
+/* same corner + hairline look as fields */
+#sermons-list {
+  background: var(--bg);
   font-family: 'DM Sans', sans-serif;
-  transition: color 0.2s ease, text-shadow 0.4s ease; /* longer & smoother */
+  padding: 40px 0;
+  color: var(--text);
 }
 
-.exp-cta:hover {
-  color: #fff; 
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4),
-               0 0 24px rgba(255, 255, 255, 0.2); /* layered soft glow */
-}
-.exp-cta .arrow{
-  transition: transform .2s ease;
-}
-.exp-cta:hover .arrow{
-  transform: translateX(3px);
+.sl-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* always 3 per row */
+  gap: 28px;
 }
 
-/* Stack on small screens */
-@media (max-width: 780px){
-  .exp-grid{ grid-template-columns: 1fr; }
+/* Card */
+.sermon-card {
+  background: var(--panel);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.35s ease,
+              opacity 0.3s ease;
+  cursor: pointer;
+  transform: scale(1);
 }
+
+.sermon-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.sermon-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 14px 4px;
+  color: var(--text);
+}
+
+.sermon-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 14px 14px;
+}
+
+/* Hover focus effect */
+.sl-wrap:hover .sermon-card {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+.sl-wrap .sermon-card:hover {
+  transform: scale(1.07);
+  opacity: 1;
+  z-index: 5;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+
+
 
 
 /* Optional: Adding focus styles to input for more visual feedback */
@@ -926,7 +1027,7 @@ body {
 .nav-links li a {
   text-decoration: none;
   color: #ccc;
-  transition: color 0.3s ease;
+  transition: co  lor 0.3s ease;
 }
 
 .nav-links li a:hover {

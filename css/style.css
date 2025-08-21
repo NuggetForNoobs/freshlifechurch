@@ -78,53 +78,152 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
-header {
+/* Header container */
+.site-header {
   background: #0A0A0A;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: center;
+  padding: 16px 24px;
 }
 
 /* Navbar layout */
 .navbar {
-  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0 auto;
   max-width: 1200px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  position: relative;
+  justify-content: space-between; /* keep brand left, nav right */
+  gap: 40px; /* balanced space */
 }
 
-/* Apply DM Sans to the navigation links */
-.nav-links {
-  font-family: 'DM Sans', sans-serif;
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Or set your preferred color, like: color: #333 */
+/* ---------- Brand ---------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
 }
 
-.logo-img {
-  width: 44px; /* Adjust the logo size here */
+.brand__img {
+  margin-left: 46px;
+  width: 44px;
   height: auto;
-  margin-right: 10px; /* Space between the logo and text */
 }
 
-.logo {
+.brand__stack {
+  display: inline-flex;
+  align-items: center;  /* instead of baseline */
+  gap: 6px;
+}
+
+.brand__name {
+  position: relative; 
+  font-family: 'DM Sans', sans-serif;
   font-size: 26px;
+  font-weight: 700;
   letter-spacing: 0.1px;
-  font-weight: bold;
-  white-space: nowrap;
+  left: 5px;   /* moves it 30px to the right */  
 }
 
-.mondo {
-  font-size: 12px !important;
-  letter-spacing: 5px !important;
-  color: #999 !important;
-  margin-left: -40px !important; /* Moves text to the left */
-  margin-bottom: 2px !important;
-  position: relative; /* Ensure transform works */
-  transform: translateY(3px); /* Move text upwards more (increase the negative value) */
+.brand__tag {
+  position: relative; 
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #999;
+  margin-top: 5px; /* lift slightly so it aligns with “Fresh” */
+  left: 14px;   /* moves it 30px to the right */  
+}
+
+/* ---------- Search ---------- */
+.search {
+  flex: 1;                         /* expand to take center space */
+  max-width: 500px;                 /* cap width */
+  margin: 0 40px;                   /* spacing on both sides */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;                /* smaller height */
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 9999px;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+.search:hover {
+  box-shadow: 0 0 5px rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.search:focus-within {
+  box-shadow: 0 0 12px rgba(255,255,255,0.55);
+  border-color: rgba(255,255,255,0.55);
+}
+
+.search i {
+  font-size: 16px;
+  color: #888;
+}
+
+.search input {
+  font-family: 'DM Sans', sans-serif;
+  flex: 1;
+  font-size: 14px;
+  padding: 4px 0;
+  background: transparent; /* should fix */
+  border: none;
+  color: #eaeaea;
+  outline: none;
+}
+
+
+
+/* Suggestion list keeps your existing IDs/classes */
+.suggestion-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 20;
+}
+
+/* ---------- Nav ---------- */
+.primary-nav { min-width: 0; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #eaeaea;
+  font-size: 15px;
+  transition: opacity .2s ease;
+}
+
+.nav-links a:hover { opacity: .8; }
+
+/* ---------- Small width polish (keeps one row longer) ---------- */
+@media (max-width: 1100px) {
+  .brand__name { font-size: 24px; }
+  .brand__tag  { letter-spacing: 4px; font-size: 11px; top: 1px; }
+  .nav-links   { gap: 18px; }
+  .search      { width: clamp(240px, 36vw, 480px); padding: 8px 14px; }
+}
+
+@media (max-width: 960px) {
+  .brand__name { font-size: 22px; }
+  .nav-links   { gap: 14px; }
+  .search      { width: clamp(220px, 34vw, 420px); }
 }
 
 
